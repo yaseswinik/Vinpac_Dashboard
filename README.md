@@ -1,6 +1,6 @@
-# ProjectDashboard
+# Dashboard
 
-# running the dashboard
+# Running the dashboard
 Download the file and rename it if running it for another container. 
 
 bokeh serve <file_name>.py --port <new_port_for_bashboard> --allow-websocket-origin <tool_server_ip>:<tool_port_number>
