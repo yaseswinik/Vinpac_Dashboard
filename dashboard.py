@@ -19,9 +19,11 @@ from bokeh.plotting import figure
 from bokeh.palettes import Category10_10
 
 
+
 #engine = sqlalchemy.create_engine('postgresql+psycopg2://admin:admin@localhost:5432/capstone')
 #engine = sqlalchemy.create_engine('postgresql+psycopg2://admin:admin@host.docker.internal:5432/capstone')
 engine = sqlalchemy.create_engine('mysql+pymysql://root:Kukku123MYSQL@host.docker.internal/vinpac')
+
 
 
 # df = pd.read_sql_table('MachDetFillerStoppageEachDay', con=engine)
