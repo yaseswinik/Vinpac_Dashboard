@@ -9,6 +9,7 @@ import pandas as pd
 import sqlalchemy
 import psycopg2
 import datetime
+import pymysql
 
 from bokeh.models.widgets import Panel, Tabs
 from bokeh.models import ColumnDataSource, DataTable, TableColumn, Div, HTMLTemplateFormatter, DateRangeSlider, DateFormatter, CheckboxGroup, HoverTool, DaysTicker, RadioGroup, CustomJSHover, CategoricalColorMapper, NumberFormatter, NumeralTickFormatter
@@ -18,13 +19,15 @@ from bokeh.plotting import figure
 from bokeh.palettes import Category10_10
 
 
-engine = sqlalchemy.create_engine('postgresql+psycopg2://admin:admin@localhost:5432/capstone')
+#engine = sqlalchemy.create_engine('postgresql+psycopg2://admin:admin@localhost:5432/capstone')
+#engine = sqlalchemy.create_engine('postgresql+psycopg2://admin:admin@host.docker.internal:5432/capstone')
+engine = sqlalchemy.create_engine('mysql+pymysql://root:Kukku123MYSQL@host.docker.internal/vinpac')
 
 
 # df = pd.read_sql_table('MachDetFillerStoppageEachDay', con=engine)
 # df = df.loc[~df.Status.isin(['Running','Off'])]
 
-linedf = pd.read_sql_table('MachStoppageforFillerAllDays', con=engine)
+linedf = pd.read_sql_table('machstoppageforfilleralldays', con=engine)
 
 
 linedf = linedf.loc[~linedf.Status.isin(['Running','Off'])]
