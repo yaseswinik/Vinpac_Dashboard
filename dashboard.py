@@ -7,7 +7,7 @@ Created on Tue May 11 10:49:45 2021
 """
 import pandas as pd
 import sqlalchemy
-import psycopg2
+#import psycopg2
 import datetime
 import pymysql
 
